@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
-    @EventHandler
+    @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(this, this);
         saveDefaultConfig();
