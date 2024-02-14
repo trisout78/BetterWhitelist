@@ -1,5 +1,6 @@
 name: BetterWhitelist
 main: fr.trisout.betterwhitelist.Main
 version: 1.0
+api-version: '1.8'
 author: Trisout
 description: A better whitelist plugin
