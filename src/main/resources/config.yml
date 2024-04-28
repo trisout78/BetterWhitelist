@@ -2,3 +2,9 @@ whitelist:
   - Trisout78
   - Trisout
   - Notch
+# HostnameWhitelist Config
+warning: '&cYou entered the wrong IP address, please use &3example.com &cinstead'
+ignore-case: true
+block-legacy: true
+allowed-host-names:
+  - 'localhost'
