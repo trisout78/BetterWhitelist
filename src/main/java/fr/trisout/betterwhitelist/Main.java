@@ -32,6 +32,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        reloadConfigHostname();
         reloadConfig();
             if (!getConfig().getStringList("whitelist").contains(event.getPlayer().getName())) {
                 event.getPlayer().kickPlayer("§cYou are not whitelisted on this server.");
@@ -61,14 +62,13 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerQuitEvent event) {
+    public void onPlayerLeave(PlayerQuitEvent event) {
         reloadConfig();
         if (!getConfig().getStringList("whitelist").contains(event.getPlayer().getName())) {
             event.setQuitMessage(null);
         }
     }
-    @Override
-    public void reloadConfig() {
+    public void reloadConfigHostname() {
         super.reloadConfig();
         Configuration config = getConfig();
         warning = ChatColor.translateAlternateColorCodes('&', config.getString("warning"));
