@@ -19,6 +19,7 @@ public class Main extends JavaPlugin implements Listener {
     private String warning;
     private boolean ignoreCase;
     private boolean blockLegacy;
+    private boolean HostnameEnabled;
 
     @Override
     public void onEnable() {
@@ -40,6 +41,9 @@ public class Main extends JavaPlugin implements Listener {
         }
     @EventHandler
     public void onLogin(PlayerLoginEvent event) {
+        if (!HostnameEnabled) {
+            return;
+        }
         String hostname = event.getHostname();
         int port = hostname.indexOf(":");
         if (port != -1) {
@@ -75,6 +79,7 @@ public class Main extends JavaPlugin implements Listener {
         ignoreCase = config.getBoolean("ignore-case", true);
         validHostNames = Util.getHostNames(config.getStringList("allowed-host-names"), ignoreCase);
         blockLegacy = config.getBoolean("block-legacy", true);
+        HostnameEnabled = config.getBoolean("hostname-enabled", true);
     }
 }
 
