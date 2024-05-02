@@ -3,6 +3,7 @@ whitelist:
   - Trisout
   - Notch
 # HostnameWhitelist Config
+hostname-enabled: true
 warning: '&cYou entered the wrong IP address, please use &3example.com &cinstead'
 ignore-case: true
 block-legacy: true
