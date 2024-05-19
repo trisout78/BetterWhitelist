@@ -1,5 +1,8 @@
 name: BetterWhitelist
 main: fr.trisout.betterwhitelist.Main
-version: 1.1.0
+version: 1.2.0
 author: Trisout
 description: A better whitelist plugin
+commands:
+  wl:
+    description: Adds a player to the whitelist.
