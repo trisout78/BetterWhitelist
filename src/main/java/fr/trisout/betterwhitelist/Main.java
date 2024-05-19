@@ -17,7 +17,9 @@ public class Main extends JavaPlugin implements Listener {
         saveDefaultConfig();
         PluginManager pm = getServer().getPluginManager();
         hostnameWhitelist = new HostnameWhitelist(getConfig());
-        pm.registerEvents(hostnameWhitelist, this);
+        if (hostnameWhitelist != null) {
+            pm.registerEvents(hostnameWhitelist, this);
+        }
         reloadConfig();
     }
 

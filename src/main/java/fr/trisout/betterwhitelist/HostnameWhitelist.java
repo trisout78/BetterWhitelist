@@ -7,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Set;
 
@@ -19,9 +18,6 @@ public class HostnameWhitelist implements Listener {
     private boolean blockLegacy;
     private boolean HostnameEnabled;
 
-    public HostnameWhitelist(JavaPlugin plugin) {
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-    }
 
     public HostnameWhitelist(Configuration config) {
         reloadConfigHostname(config);
