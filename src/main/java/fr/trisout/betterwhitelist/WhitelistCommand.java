@@ -39,8 +39,14 @@ public class WhitelistCommand implements CommandExecutor {
             return true;
         }
 
+        FileConfiguration config = plugin.getConfig();
+        if (!config.getBoolean("whitelist-command-enabled", true)) {
+            player.sendMessage("§cThe whitelist command feature is currently disabled.");
+            return true;
+        }
+
         if (cooldowns.containsKey(player.getUniqueId())) {
-            long secondsLeft = ((cooldowns.get(player.getUniqueId()) / 1000) + plugin.getConfig().getInt("cooldown")) - (System.currentTimeMillis() / 1000);
+            long secondsLeft = ((cooldowns.get(player.getUniqueId()) / 1000) + config.getInt("cooldown")) - (System.currentTimeMillis() / 1000);
             if (secondsLeft > 0) {
                 player.sendMessage("§cYou cannot use this command for another " + secondsLeft + " seconds!");
                 return true;
@@ -50,7 +56,6 @@ public class WhitelistCommand implements CommandExecutor {
         cooldowns.put(player.getUniqueId(), System.currentTimeMillis());
 
         String targetPlayer = args[0];
-        FileConfiguration config = plugin.getConfig();
         config.getStringList("whitelist").add(targetPlayer);
         plugin.saveConfig();
 

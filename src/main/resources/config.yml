@@ -10,3 +10,6 @@ block-legacy: true
 allowed-host-names:
   - 'localhost'
 custom-join-leave-message: true
+# Whitelist command
+whitelist-command-enabled: true
+cooldown: 60 # cooldown in seconds
