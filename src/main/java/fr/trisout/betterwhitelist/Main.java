@@ -14,13 +14,13 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(this, this);
+        hostnameWhitelist = new HostnameWhitelist(getConfig());
         saveDefaultConfig();
         PluginManager pm = getServer().getPluginManager();
-        hostnameWhitelist = new HostnameWhitelist(getConfig());
         if (hostnameWhitelist != null) {
             pm.registerEvents(hostnameWhitelist, this);
+            reloadConfig();
         }
-        reloadConfig();
     }
 
     @EventHandler
