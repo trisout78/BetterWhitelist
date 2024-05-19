@@ -9,3 +9,4 @@ ignore-case: true
 block-legacy: true
 allowed-host-names:
   - 'localhost'
+custom-join-leave-message: true
