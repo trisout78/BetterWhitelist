@@ -25,7 +25,7 @@ public class PlayerJoinLeaveListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event) {
         if (plugin.getConfig().getBoolean("custom-join-leave-message")) {
             String playerName = event.getPlayer().getName();
-            event.setQuitMessage("§7[§l§a-§r§7] " + playerName);
+            event.setQuitMessage("§7[§l§c-§r§7] " + playerName);
         }
     }
 }
