@@ -16,6 +16,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(this, this);
         saveDefaultConfig();
         PluginManager pm = getServer().getPluginManager();
+        hostnameWhitelist = new HostnameWhitelist(getConfig());
         pm.registerEvents(hostnameWhitelist, this);
         reloadConfig();
     }
@@ -39,6 +40,6 @@ public class Main extends JavaPlugin implements Listener {
 
     public void reloadConfig() {
         super.reloadConfig();
-        hostnameWhitelist = new HostnameWhitelist(getConfig());
+        hostnameWhitelist.reloadConfigHostname(getConfig());
     }
 }
