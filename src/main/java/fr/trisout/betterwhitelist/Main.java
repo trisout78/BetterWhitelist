@@ -25,6 +25,7 @@ public class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(this, this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoinLeaveListener(this), this);
+        new WhitelistCommand(this);
         saveDefaultConfig();
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
