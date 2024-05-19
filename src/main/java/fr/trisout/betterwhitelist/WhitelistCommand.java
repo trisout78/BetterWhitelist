@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -56,7 +57,9 @@ public class WhitelistCommand implements CommandExecutor {
         cooldowns.put(player.getUniqueId(), System.currentTimeMillis());
 
         String targetPlayer = args[0];
-        config.getStringList("whitelist").add(targetPlayer);
+        List<String> whitelist = config.getStringList("whitelist");
+        whitelist.add(targetPlayer);
+        config.set("whitelist", whitelist);
         plugin.saveConfig();
 
         Bukkit.broadcastMessage("§b" + targetPlayer + " has been added to the whitelist by " + player.getName());
