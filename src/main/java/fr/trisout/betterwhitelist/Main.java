@@ -24,6 +24,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(this, this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoinLeaveListener(this), this);
         saveDefaultConfig();
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
