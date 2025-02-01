@@ -12,9 +12,8 @@ BetterWhitelist est un plugin pour Minecraft qui permet de gérer une liste blan
 ## Installation
 
 1. Téléchargez le fichier de la dernière version stable sur [GitHub Stable Actions](https://github.com/trisout78/BetterWhitelist/actions?query=branch%3Amaster).
-2. (Optionnel) Téléchargez une version de développement **(non recommandé pour une utilisation en production)** sur [GitHub Dev Actions](https://github.com/trisout78/BetterWhitelist/actions?query=branch%3Adev).
-3. Placez le fichier téléchargé dans le dossier `plugins` de votre serveur Minecraft.
-4. Démarrez ou redémarrez votre serveur pour que le plugin soit chargé.
+2. Placez le fichier téléchargé dans le dossier `plugins` de votre serveur Minecraft.
+3. Démarrez ou redémarrez votre serveur pour que le plugin soit chargé.
 
 ## Configuration
 
